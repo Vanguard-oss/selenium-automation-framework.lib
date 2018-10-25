@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.vanguard</groupId>
+		<artifactId>nextgen-parent</artifactId>
+		<version>(,3.0)</version>
+	</parent>
+
+	<groupId>com.vanguard.cto</groupId>
+	<artifactId>selenium-automation-framework.lib</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>selenium-automation-framework.lib</name>
+	<description>Selenium Framework allowing teams to easily create/read/maintain stable and repeatable 
+		Selenium Page Objects and Tests.</description>
+
+	<scm>
+		<connection>scm:git:http://stash.vanguard.com:7990/scm/SEL/selenium-automation-framework.lib.git</connection>
+		<developerConnection>scm:git:http://stash.vanguard.com:7990/scm/SEL/selenium-automation-framework.lib.git</developerConnection>
+	</scm>
+
+	<!-- Fill in either the list of developers or the mailing list or both. -->
+	<mailingLists>
+		<mailingList>
+			<name>TeamEmailList</name>
+		</mailingList>
+	</mailingLists>
+
+	  <developers>
+		<developer>
+			<roles>
+				<role>Lead Developer</role>
+			</roles>
+			<name>Craig Schwarzwald</name>
+		</developer>
+	  </developers>
+
+	<properties>
+		<deployment.type>external-and-internal</deployment.type>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<mats.module.type>business-service-impl</mats.module.type>
+		<mats.business.capability>spring-boot-jaxrs-demo</mats.business.capability> 
+		<spring.boot.version>1.2.2.RELEASE</spring.boot.version>
+		<spring.version>4.1.6.RELEASE</spring.version>
+		
+		<!-- Coverage numbers are low at present due to use of PowerMockito (which doesn't count those tests) in Jacoco coverage.
+		This is needed for some tests, but probably not all that are using it.
+		As we finish the TODOs we can increase these numbers -->
+		<project.differential.coverage.threshold>20</project.differential.coverage.threshold>
+		<project.differential.line.coverage.threshold>20</project.differential.line.coverage.threshold>
+		<project.differential.branches.coverage.threshold>20</project.differential.branches.coverage.threshold>
+		<project.line.coverage.threshold>20</project.line.coverage.threshold>
+		<project.branch.coverage.threshold>20</project.branch.coverage.threshold>
+		
+		<!-- If you add logic to the dao project you should set mutation.coverage.skip to false to run mutation -->
+		<mutation.coverage.skip>true</mutation.coverage.skip>
+	</properties>
+  
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${spring.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+			<dependency>
+			  <groupId>com.google.guava</groupId>
+			  <artifactId>guava</artifactId>
+			  <version>25.0-jre</version>
+			</dependency>			
+		</dependencies>
+	</dependencyManagement>	
+
+	<dependencies>
+	  	<dependency>
+	  		<groupId>org.seleniumhq.selenium</groupId>
+	  		<artifactId>selenium-java</artifactId>
+	  		<version>3.9.1</version>
+	  	</dependency>
+		
+		<!-- Junit is specifically NOT scoped to test because we want to include the
+		SeleniumBaseTest.java class in our actual framework code. -->
+		<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+	
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${spring.boot.version}</version>
+			<scope>test</scope>
+		</dependency>	
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.8.9</version>
+			<scope>test</scope>
+		</dependency>			
+		<dependency>
+		    <groupId>org.easymock</groupId>
+		    <artifactId>easymock</artifactId>
+		    <version>3.4</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.powermock</groupId>
+		    <artifactId>powermock-api-mockito2</artifactId>
+		    <version>1.7.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>1.7.4</version>
+			<scope>test</scope>
+		</dependency>	
+		<dependency> 
+		  <groupId>org.apache.commons</groupId>
+		  <artifactId>commons-io</artifactId> 
+		  <version>1.3.2</version> 
+		</dependency> 
+	  </dependencies>
+  
+</project>
