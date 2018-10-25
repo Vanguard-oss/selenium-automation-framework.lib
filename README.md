@@ -141,6 +141,6 @@ This helps to ensure your test cases are Autonomous, and not heavily dependent o
 
 ## Learn more about how to use this framework
 
-Blog Post: [Flakiness of Corporate Selenium Suites and how to get rid of it] (http://www.ocpsoft.org/opensource/flakiness-of-corporate-selenium-suites-and-how-to-get-rid-of-it/)
+Blog Post: [Flakiness of Corporate Selenium Suites and how to get rid of it](http://www.ocpsoft.org/opensource/flakiness-of-corporate-selenium-suites-and-how-to-get-rid-of-it/)
 
-Or watch this video recorded at SauceCon2016: [SAY GOODBYE TO THE "F" WORD - FLAKY NO MORE!] (https://www.youtube.com/watch?v=2K2M7s_Ups0)
+Or watch this video recorded at SauceCon2016: [SAY GOODBYE TO THE "F" WORD - FLAKY NO MORE!](https://www.youtube.com/watch?v=2K2M7s_Ups0)
