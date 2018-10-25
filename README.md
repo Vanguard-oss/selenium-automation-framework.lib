@@ -23,12 +23,14 @@ Utilizing this framework makes the tests easy to read and create, makes them mai
 
 ## Using this framework
 Simply add a maven dependency to your project
+```
 <dependency>
 	<groupId>com.vanguard.cto</groupId>
 	<artifactId>selenium-automation-framework.lib</artifactId>
 	<version>1.0.0</version>
 </dependency>
- 
+```
+
 Create PageObject classes that extend SeleniumPageObject.
 Create Test cases that extend SeleniumBaseTest
 NOTE: You may want to create your own CorporateBsePage and/or CorporateBaseTest that all pages and tests respectively extend within your suite.
@@ -38,9 +40,9 @@ More details can be found in the blog post and/or video at the end of this ReadM
 ## Framework Properties
 There are a few key properties that will alter the way this framework behaves.  They can be set in the file: src/test/resources/seleniumFramework.properties
 They are:
-failIfElementNotFound=true|false - true will fail a test as soon as it encounters an element it can't find when trying to perform any action on said element, false will log an error in the console for failing to complete the desired action on the element, but will then continue the test execution.  FRAMEWORK DEFAULT: false.
-geckoDriverLocation=/path/to/geckodriver/exe - Specify the location of your geckodriver executable.  This is required to utilize the SeleniumBaseTest which is configured to launch a Firefox browser at the beginning of each test, and close it at the end.  FRAMEWORK DEFAULT: None.  If this property or the entire file is missing, the SeleniumBaseTest class will not work as no Firefox browser will be able to be launched.
-SELENIUM_MAX_WAIT=60 - the maximum time in seconds you want any explicit wait anywhere in your suite to wait for.  FRAMEWORK DEFAULT: 90 seconds.
+⋅⋅*failIfElementNotFound=true|false - true will fail a test as soon as it encounters an element it can't find when trying to perform any action on said element, false will log an error in the console for failing to complete the desired action on the element, but will then continue the test execution.  FRAMEWORK DEFAULT: false.
+⋅⋅*geckoDriverLocation=/path/to/geckodriver/exe - Specify the location of your geckodriver executable.  This is required to utilize the SeleniumBaseTest which is configured to launch a Firefox browser at the beginning of each test, and close it at the end.  FRAMEWORK DEFAULT: None.  If this property or the entire file is missing, the SeleniumBaseTest class will not work as no Firefox browser will be able to be launched.
+⋅⋅*SELENIUM_MAX_WAIT=60 - the maximum time in seconds you want any explicit wait anywhere in your suite to wait for.  FRAMEWORK DEFAULT: 90 seconds.
 
 
 ## Keys to the framework's success
@@ -108,8 +110,8 @@ Let's pretend we have the following table on our page, where "EditLink" was actu
 Note: Since we probably generate these EditLink's dynamically on our page, using ID's or other standard selenium locators may not work best:
 
 	| First Name | Last Name    | Email         	| Link  |
-	| ---------:| -------------:| ----------------:| ------:|
-	| Fred	     | Jones         | FJones@test.com   |EditLink|
+	|:--------- |:------------- |:---------------- |:------:|
+	| Fred	    | Jones         | FJones@test.com   |EditLink|
 	| Mary      | Smith         | MSmith@test.com   |EditLink|
 	| John      | Adams         | JAdams@test.com   |EditLink|
 	| James     | Peters        | JPeters@test.com  |EditLink|
