@@ -44,7 +44,7 @@
 		<mats.module.type>business-service-impl</mats.module.type>
 		<mats.business.capability>spring-boot-jaxrs-demo</mats.business.capability> 
 		<spring.boot.version>1.2.2.RELEASE</spring.boot.version>
-		<spring.version>4.1.6.RELEASE</spring.version>
+		<spring.version>4.3.30.RELEASE</spring.version>
 		
 		<!-- Coverage numbers are low at present due to use of PowerMockito (which doesn't count those tests) in Jacoco coverage.
 		This is needed for some tests, but probably not all that are using it.
